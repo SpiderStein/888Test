@@ -12,7 +12,7 @@
                 "<node_internals>/**",
                 "node_modules/**"
             ],
-            "program": "${workspaceFolder}\\cOutput\\locations\\entrypoint.js",
+            "program": "${workspaceFolder}/cOutput/locations/entrypoint.js",
             "preLaunchTask": "tsc: build - tsconfig.json",
         }
     ]
