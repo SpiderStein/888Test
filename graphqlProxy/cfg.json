@@ -1,0 +1,4 @@
+{
+    "port": 8888,
+    "graphqlServiceUrl": "https://countries.trevorblades.com/"
+}

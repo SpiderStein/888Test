@@ -14,6 +14,9 @@
             ],
             "program": "${workspaceFolder}/cOutput/locations/entrypoint.js",
             "preLaunchTask": "tsc: build - tsconfig.json",
+            "env": {
+                "CfgPath": "${workspaceFolder}/graphqlProxy/cfg.json"
+            }
         }
     ]
 }
