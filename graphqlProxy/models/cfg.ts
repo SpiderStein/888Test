@@ -1,4 +1,6 @@
-export interface Cfg {
-    port: number
-    graphqlServiceUrl: string
+export class Cfg {
+    constructor(
+        public port: number,
+        public graphqlServiceUrl: string
+    ) { }
 }

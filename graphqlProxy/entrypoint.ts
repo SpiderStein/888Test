@@ -1,11 +1,16 @@
-import "reflect-metadata"; // Must be the first import.
+import "reflect-metadata";
+import { GetIocC, TYPES } from "./inversify.config";
 import { Cfg } from "./models/cfg";
 
-function getCfg(): Cfg {
-    const cfgPath = <string>process.env.CfgPath
-    return require(cfgPath)
-}
+// A function will be exported, and it will associate all the abstractions with implementations.
 
 (async () => {
-    // Here I should get the ioc container, instantiate expressjs, register middlewares and routes and run it on the chosen port.
+    const iocC = GetIocC()
+    const cfg = iocC.get<Cfg>(TYPES.Cfg)
+    console.log(cfg)
+    runServer()
 })()
+
+export function runServer() {
+
+}

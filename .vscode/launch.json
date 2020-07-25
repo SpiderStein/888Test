@@ -7,12 +7,12 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug locations",
+            "name": "Debug graphqlProxy",
             "skipFiles": [
                 "<node_internals>/**",
                 "node_modules/**"
             ],
-            "program": "${workspaceFolder}/cOutput/locations/entrypoint.js",
+            "program": "${workspaceFolder}/cOutput/graphqlProxy/entrypoint.js",
             "preLaunchTask": "tsc: build - tsconfig.json",
             "env": {
                 "CfgPath": "${workspaceFolder}/graphqlProxy/cfg.json"
