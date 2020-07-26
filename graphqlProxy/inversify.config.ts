@@ -1,18 +1,17 @@
-import { request } from "graphql-request";
+import { GraphQLClient } from "graphql-request";
 import { Container } from "inversify";
 import { Cfg } from "./models/cfg";
-import { GraphqlClient } from "./types/graphqlClient";
 
 function GetIocC(): Container {
     const iocC = new Container({ defaultScope: "Singleton" })
     iocC.bind<Cfg>(TYPES.Cfg).toConstantValue(getCfg())
-    iocC.bind<GraphqlClient>(TYPES.GraphqlClient).toConstantValue(request)
+    iocC.bind<GraphQLClient>(TYPES.GraphQLClient).toConstantValue(new GraphQLClient(iocC.get<Cfg>(TYPES.Cfg).graphqlServiceUrl))
     return iocC
 }
 
 const TYPES = {
     Cfg: Symbol.for('Cfg'),
-    GraphqlClient: Symbol.for('GraphqlClient')
+    GraphQLClient: Symbol.for('GraphQLClient')
 }
 
 function getCfg(): Cfg {
