@@ -1,23 +1,20 @@
 import { Request, Response } from "express";
-import { GraphQLClient } from "graphql-request";
+import { GraphqlServiceClient } from "./graphqlServiceClient";
 
-function getContinents(graphqlClient: GraphQLClient) {
+// In a production code, I'll add a behavior that relates to the headers and status codes that should be in the responses to the clients.
+
+function apiContinents(graphqlServiceClient: GraphqlServiceClient) {
     return async (_req: Request, res: Response) => {
-        const q = `query {
-            continents{
-                code
-                name
-            }
-        }`
+
         try {
-            const data = await graphqlClient.request(q)
-            res.json(data.continents)
-        } catch (error) {
-            console.error(error)
+            const continents = await graphqlServiceClient.getContinents()
+            res.json(continents)
+        } catch (err) {
+            console.error(err)
         }
     }
 }
 
 export {
-    getContinents
+    apiContinents
 };
