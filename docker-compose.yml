@@ -1,7 +1,7 @@
 version: "3"
 services:
   graphqlproxy:
-    image: "graphqlproxy:1.0.0"
+    image: "steidan/graphqlproxy:1.0.0"
     ports:
       - "8888:8888"
     network_mode: "host"
