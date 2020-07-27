@@ -6,10 +6,12 @@
   "license": "MIT",
   "dependencies": {
     "@types/node-fetch": "^2.5.7",
+    "@types/redis": "^2.8.25",
     "express": "^4.17.1",
     "graphql-request": "^2.0.0",
     "inversify": "^5.0.1",
     "node-fetch": "^2.6.0",
+    "redis": "^3.0.2",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
